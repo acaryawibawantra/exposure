@@ -1,0 +1,34 @@
+<svg width="1373" height="431" viewBox="0 0 1373 431" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_gn_9364_291)">
+<path d="M102.801 51.5098C17.2742 22.3962 12.8008 12.8008 12.8008 12.8008V417.801L1359.8 407.923C1322.89 265.749 1324.08 257.197 1133.58 250.58C938.394 256.647 849.168 264.489 693.712 198.026C585.857 151.914 378.419 145.076 299.275 131.481C220.131 117.885 171.942 75.0456 102.801 51.5098Z" fill="url(#paint0_linear_9364_291)"/>
+</g>
+<defs>
+<filter id="filter0_gn_9364_291" x="0.000781059" y="0.000781059" width="1372.6" height="430.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.091743119060993195 0.091743119060993195" numOctaves="3" seed="6655" />
+<feDisplacementMap in="shape" scale="25.600000381469727" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+<feMerge result="effect1_texture_9364_291">
+<feMergeNode in="displacedImage"/>
+</feMerge>
+<feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="8905" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="effect1_texture_9364_291" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(161, 229, 118, 0.2)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect2_noise_9364_291">
+<feMergeNode in="effect1_texture_9364_291" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<linearGradient id="paint0_linear_9364_291" x1="614.301" y1="215.53" x2="525.849" y2="579.915" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFEF88"/>
+<stop offset="0.164568" stop-color="#A1E576"/>
+<stop offset="0.635289" stop-color="#58B121"/>
+<stop offset="1" stop-color="#2C5810"/>
+</linearGradient>
+</defs>
+</svg>
