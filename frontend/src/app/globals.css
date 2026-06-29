@@ -15,16 +15,31 @@
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(0, 0, 0, 0.5);
   }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 }
 
 @theme {
   --font-freaky: var(--font-freaky-freedom);
+  --font-jakarta: var(--font-plus-jakarta-sans);
+  --color-brand-magenta: #951361;
 
   /* Animasi Kustom */
   --animate-twinkle: twinkle 4s ease-in-out infinite;
-  --animate-float: float 8s ease-in-out infinite;
-  --animate-float-slow: float 12s ease-in-out infinite;
-  --animate-float-fast: float 6s ease-in-out infinite;
+  --animate-twinkle-delayed: twinkle 4s ease-in-out 2s infinite;
+  --animate-twinkle-slow: twinkle 6s ease-in-out 1.5s infinite;
+  --animate-twinkle-fast: twinkle 3s ease-in-out 0.5s infinite;
+  --animate-float: float-medium 14s ease-in-out infinite;
+  --animate-float-slow: float-slow 20s ease-in-out infinite;
+  --animate-float-fast: float-fast 8s ease-in-out infinite;
+  --animate-float-drift-l: float-drift-l 24s ease-in-out infinite;
+  --animate-float-drift-r: float-drift-r 28s ease-in-out infinite;
   --animate-logo-pop: logo-pop 1.2s ease-out forwards;
   --animate-shimmer: shimmer 2.5s infinite;
   --animate-spin-slow: spin-slow 12s linear infinite;
@@ -72,15 +87,48 @@
     }
   }
 
-  @keyframes float {
-
-    0%,
-    100% {
-      transform: translateY(0);
+  @keyframes float-medium {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1);
     }
-
     50% {
-      transform: translateY(-8px);
+      transform: translateY(-10px) translateX(8px) scale(1.02);
+    }
+  }
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    50% {
+      transform: translateY(-15px) translateX(-10px) scale(1.03);
+    }
+  }
+
+  @keyframes float-fast {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    50% {
+      transform: translateY(-6px) translateX(5px) scale(1.015);
+    }
+  }
+
+  @keyframes float-drift-l {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    50% {
+      transform: translateY(-12px) translateX(-18px) scale(1.025);
+    }
+  }
+
+  @keyframes float-drift-r {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    50% {
+      transform: translateY(-16px) translateX(20px) scale(1.03);
     }
   }
 }

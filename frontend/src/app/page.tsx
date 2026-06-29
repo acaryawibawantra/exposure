@@ -5,8 +5,10 @@ import GlassCard from "@/components/GlassCard";
 import LeaderboardTable from "@/components/LeaderboardTable";
 import DesktopHeader from "@/components/DesktopHeader";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   const [introState, setIntroState] = useState<'start' | 'intro' | 'main'>('start');
 
   useEffect(() => {
@@ -62,12 +64,18 @@ export default function Home() {
           {/* Tombol Bawah (Di atas rumput) */}
           <div className="w-full max-w-sm flex flex-col gap-4 mb-12 shrink-0 z-30 px-2">
             {/* Tombol Putih */}
-            <button className="w-full py-3 rounded-2xl bg-white text-black font-freaky text-2xl tracking-wide shadow-[0_6px_0_0_#9ca3af] active:shadow-none active:translate-y-[6px] transition-all duration-75">
+            <button
+              onClick={() => router.push("/leaderboard")}
+              className="w-full py-3 rounded-2xl bg-white text-black font-freaky text-2xl tracking-wide shadow-[0_6px_0_0_#9ca3af] active:shadow-none active:translate-y-[6px] transition-all duration-75 cursor-pointer"
+            >
               SPENDING LEADERBOARD
             </button>
 
             {/* Tombol Kuning */}
-            <button className="w-full py-3 rounded-2xl bg-[#FFD747] text-black font-freaky text-2xl tracking-wide shadow-[0_6px_0_0_#9ca3af] active:shadow-none active:translate-y-[6px] transition-all duration-75">
+            <button
+              onClick={() => router.push("/submit")}
+              className="w-full py-3 rounded-2xl bg-[#FFD747] text-black font-freaky text-2xl tracking-wide shadow-[0_6px_0_0_#9ca3af] active:shadow-none active:translate-y-[6px] transition-all duration-75 cursor-pointer"
+            >
               SUBMIT YOUR RECEIPT
             </button>
           </div>
@@ -83,7 +91,10 @@ export default function Home() {
           <section className="w-full min-h-[100dvh] flex flex-col items-center justify-start pt-8 md:pt-12 px-4 md:px-10 max-w-7xl mx-auto">
 
             {/* Desktop Header */}
-            <DesktopHeader />
+            <DesktopHeader
+              onLeaderboardClick={() => router.push("/")}
+              onSubmitClick={() => router.push("/submit")}
+            />
 
             {/* Logo EXPOSURE & Judul */}
             <div className="flex flex-col items-center justify-center w-full mb-6">
@@ -147,7 +158,7 @@ export default function Home() {
 
           {/* SECTION 2: PRIZES (Terletak di dalam lembah rumput) */}
           <section className="w-full min-h-[50vh] flex flex-col items-center justify-start pt-10 pb-20 px-4 md:px-6 relative z-30">
-            <h2 className="text-5xl md:text-[5rem] font-black font-freaky text-white mb-6 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] tracking-wider">
+            <h2 className="text-5xl md:text-[5rem] font-black font-freaky text-white mb-15 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] tracking-wider">
               PRIZES!
             </h2>
             <GlassCard className="w-full max-w-5xl h-[300px] md:h-[400px] rounded-[2rem] flex flex-col items-center justify-center p-8 shadow-2xl">
@@ -164,7 +175,7 @@ export default function Home() {
               <img
                 src="/icons/logo-icon-mobile.svg"
                 alt="Exposure Logo Small"
-                className="h-20 w-auto object-contain opacity-80"
+                className="h-20 md:h-16 w-auto object-contain opacity-80"
               />
               <p className="text-white font-bold text-sm drop-shadow-md">
                 Copyright @ EXPOSURE 2026

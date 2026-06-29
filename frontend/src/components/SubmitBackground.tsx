@@ -1,15 +1,19 @@
+"use client";
+
 import React from "react";
 
-interface MainBackgroundProps {
+interface SubmitBackgroundProps {
   children: React.ReactNode;
 }
 
-export default function MainBackground({ children }: MainBackgroundProps) {
+export default function SubmitBackground({ children }: SubmitBackgroundProps) {
   return (
-    <div className="relative w-full flex flex-col bg-linear-to-b from-[#4fa3e3] via-[#b39ddb] via-[#f48fb1] via-[#ffe082] to-[#81c784] h-[100dvh] overflow-hidden md:h-auto md:min-h-[100dvh] md:overflow-x-hidden">
+    <div className="relative w-full flex flex-col bg-linear-to-b from-[#4fa3e3] via-[#b39ddb] via-[#f48fb1] via-[#ffe082] to-[#81c784] min-h-[100dvh] md:h-[100vh] overflow-y-auto md:overflow-hidden overflow-x-hidden">
       {/* 
+        FIXED BACKGROUND LAYER (Z-INDEX: 0)
+        Pinned to viewport so it never scrolls, keeping the landscape static.
       */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
+      <div className="fixed inset-0 pointer-events-none overflow-hidden select-none z-0">
         {/* Layer 1: Base Background SVG */}
         <img
           src="/svg/background.svg"
@@ -69,47 +73,46 @@ export default function MainBackground({ children }: MainBackgroundProps) {
           />
         </div>
 
-        {/* Layer 1.4: Bintang-bintang (Menyebar) */}
+        {/* Layer 1.4: Bintang-bintang */}
         <img
           src="/svg/bintang.svg"
           alt="Bintang Pusat"
           className="absolute top-[7vh] md:top-[7vh] left-1/2 -translate-x-1/2 w-full max-w-5xl h-[70vh] object-contain opacity-80 animate-twinkle"
         />
 
-
-        {/* Layer 2: Rumput Lembah (Gabungan Mobile) */}
+        {/* Layer 2: Rumput Lembah (Mobile) */}
         <img
           src="/svg/rumput-full-mobile.svg"
           alt="Rumput Bawah Mobile"
           className="md:hidden absolute bottom-[-5%] left-0 w-[110%] h-auto object-contain object-bottom scale-[1.05] origin-bottom"
         />
 
-        {/* Layer 3: Rumput Kiri Desktop */}
+        {/* Layer 3: Rumput Kiri Desktop - Pinned low and scaled down specifically for Submit Page */}
         <img
           src="/svg/rumput-kiri.svg"
           alt="Rumput Kiri Desktop"
-          className="hidden md:block absolute bottom-[12%] md:bottom-[5%] lg:bottom-[25%] left-[-4%] w-[55%] lg:w-[70%] scale-[2] object-contain object-left-bottom"
+          className="hidden md:block absolute bottom-[0%] left-[-4%] w-[55%] lg:w-[70%] scale-[1.25] object-contain object-left-bottom"
         />
 
-        {/* Layer 4: Rumput Kanan Desktop */}
+        {/* Layer 4: Rumput Kanan Desktop - Pinned low and scaled down specifically for Submit Page */}
         <img
           src="/svg/rumput-kanan.svg"
           alt="Rumput Kanan Desktop"
-          className="hidden md:block absolute bottom-[12%] md:bottom-[5%] lg:bottom-[25%] right-[-10%] w-[55%] lg:w-[60%] scale-[2] object-contain object-right-bottom"
+          className="hidden md:block absolute bottom-[0%] right-[-10%] w-[55%] lg:w-[60%] scale-[1.25] object-contain object-right-bottom"
         />
 
-        {/* Layer 5: Rumput Dasar Desktop */}
+        {/* Layer 5: Rumput Dasar Desktop - Kept low (h-[26vh]) specifically for Submit Page */}
         <img
           src="/svg/rumput.svg"
           alt="Rumput Dasar Desktop"
-          className="hidden md:block absolute bottom-[-5%] left-0 w-[105%] h-[20vh] lg:h-[55vh] scale-[1.05] object-cover object-top"
+          className="hidden md:block absolute bottom-[-10%] left-0 w-[105%] h-[15vh] lg:h-[26vh] scale-[1.05] object-cover object-top"
         />
 
-        {/* Layer 6: Cahaya Lembah (Ellipse) di Atas Rumput */}
+        {/* Layer 6: Cahaya Lembah (Ellipse) - Positioned low */}
         <img
           src="/svg/Ellipse.svg"
           alt="Cahaya Lembah"
-          className="absolute left-1/2 -translate-x-1/2 bottom-[-20%] md:bottom-[20%] lg:bottom-[-30%] w-[180%] md:w-[120%] lg:w-[120%] max-w-none object-contain pointer-events-none saturate-100 brightness-100"
+          className="absolute left-1/2 -translate-x-1/2 bottom-[-20%] lg:top-[-10%] w-[180%] md:w-[120%] lg:w-[120%] max-w-none object-contain pointer-events-none saturate-100 brightness-100"
         />
 
         {/* Layer 6.5: Awan Kecil (Depan Cahaya) */}
@@ -122,8 +125,8 @@ export default function MainBackground({ children }: MainBackgroundProps) {
         </div>
       </div>
 
-      {/* LAYER KONTEN UTAMA (Z-INDEX: 10) */}
-      <div className="relative z-10 flex-1 flex flex-col w-full">
+      {/* SCROLLABLE MAIN CONTENT LAYER (Z-INDEX: 10) */}
+      <div className="relative z-10 flex-1 flex flex-col w-full min-h-0">
         {children}
       </div>
     </div>
