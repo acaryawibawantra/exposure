@@ -58,7 +58,7 @@ export default function Home() {
 
           {/* Center Graphic (Spend More To Win Prizes) */}
           <div className="w-full flex flex-col items-center justify-center -my-4 z-20">
-            <img src="/svg/hero-mobile.png" alt="Spend More To Win Prizes" className="w-[85%] max-w-[85%] h-auto aspect-[382/305] object-contain" />
+            <img src="/icons/hero-mobile.svg" alt="Spend More To Win Prizes" className="w-[100%] max-w-[100%] h-auto aspect-[382/305] object-contain" />
           </div>
 
           {/* Tombol Bawah (Di atas rumput) */}
@@ -66,7 +66,7 @@ export default function Home() {
             {/* Tombol Putih */}
             <button
               onClick={() => router.push("/leaderboard")}
-              className="w-full py-3 rounded-2xl bg-white text-black font-freaky text-2xl tracking-wide shadow-[0_6px_0_0_#9ca3af] active:shadow-none active:translate-y-[6px] transition-all duration-75 cursor-pointer"
+              className="w-full py-2 rounded-2xl bg-white text-black font-freaky text-2xl tracking-wide shadow-[0_6px_0_0_#9ca3af] active:shadow-none active:translate-y-[6px] transition-all duration-75 cursor-pointer"
             >
               SPENDING LEADERBOARD
             </button>
@@ -74,7 +74,7 @@ export default function Home() {
             {/* Tombol Kuning */}
             <button
               onClick={() => router.push("/submit")}
-              className="w-full py-3 rounded-2xl bg-[#FFD747] text-black font-freaky text-2xl tracking-wide shadow-[0_6px_0_0_#9ca3af] active:shadow-none active:translate-y-[6px] transition-all duration-75 cursor-pointer"
+              className="w-full py-2 rounded-2xl bg-[#FFD747] text-black font-freaky text-2xl tracking-wide shadow-[0_6px_0_0_#9ca3af] active:shadow-none active:translate-y-[6px] transition-all duration-75 cursor-pointer"
             >
               SUBMIT YOUR RECEIPT
             </button>
