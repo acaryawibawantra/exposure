@@ -57,7 +57,7 @@ export default function Home() {
           </div>
 
           {/* Center Graphic (Spend More To Win Prizes) */}
-          <div className="w-full flex-1 flex flex-col items-center justify-center -my-4 z-20">
+          <div className="w-full flex flex-col items-center justify-center -my-4 z-20">
             <img src="/icons/hero-mobile.svg" alt="Spend More To Win Prizes" className="w-[85%] max-w-[85%] h-auto aspect-[382/305] object-contain" />
           </div>
 
