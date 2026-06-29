@@ -212,7 +212,7 @@ export default function SubmitPage() {
                     placeholder="Masukkan email Anda"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-white border border-neutral-200 rounded-2xl px-5 py-3 text-sm shadow-inner focus:outline-none focus:ring-2 focus:ring-[#f48fb1] font-jakarta"
+                    className="w-full bg-white border border-neutral-200 rounded-2xl px-5 py-3 text-base shadow-inner focus:outline-none focus:ring-2 focus:ring-[#f48fb1] font-jakarta"
                   />
                 </div>
 
@@ -224,7 +224,7 @@ export default function SubmitPage() {
                     placeholder="Masukkan username Anda"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="w-full bg-white border border-neutral-200 rounded-2xl px-5 py-3 text-sm shadow-inner focus:outline-none focus:ring-2 focus:ring-[#f48fb1] font-jakarta"
+                    className="w-full bg-white border border-neutral-200 rounded-2xl px-5 py-3 text-base shadow-inner focus:outline-none focus:ring-2 focus:ring-[#f48fb1] font-jakarta"
                   />
                   <span className="text-[10px] text-neutral-600 leading-tight">
                     *Username ini akan menjadi identitas Anda di Leaderboard dan digunakan untuk seluruh transaksi berikutnya
@@ -239,7 +239,7 @@ export default function SubmitPage() {
                     placeholder="Masukkan nomor telepon Anda"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full bg-white border border-neutral-200 rounded-2xl px-5 py-3 text-sm shadow-inner focus:outline-none focus:ring-2 focus:ring-[#f48fb1] font-jakarta"
+                    className="w-full bg-white border border-neutral-200 rounded-2xl px-5 py-3 text-base shadow-inner focus:outline-none focus:ring-2 focus:ring-[#f48fb1] font-jakarta"
                   />
                 </div>
               </div>

@@ -199,7 +199,7 @@ export default function ReceiptCard({
               <select
                 value={data.tenant}
                 onChange={(e) => onChange(data.id, { tenant: e.target.value })}
-                className="w-full bg-white border border-neutral-200 text-neutral-800 rounded-full px-5 py-2.5 text-sm appearance-none outline-none focus:ring-2 focus:ring-[#f48fb1]/50 focus:border-[#f48fb1] shadow-sm transition-all cursor-pointer font-jakarta"
+                className="w-full bg-white border border-neutral-200 text-neutral-800 rounded-full px-5 py-2.5 text-base md:text-sm appearance-none outline-none focus:ring-2 focus:ring-[#f48fb1]/50 focus:border-[#f48fb1] shadow-sm transition-all cursor-pointer font-jakarta"
               >
                 <option value=""></option>
                 {tenants.map((t) => (
@@ -232,7 +232,7 @@ export default function ReceiptCard({
                 type="date"
                 value={data.date}
                 onChange={(e) => onChange(data.id, { date: e.target.value })}
-                className="w-full bg-white border border-neutral-200 text-neutral-800 rounded-full px-5 py-2.5 pr-10 text-sm outline-none focus:ring-2 focus:ring-[#f48fb1]/50 focus:border-[#f48fb1] shadow-sm transition-all cursor-pointer font-jakarta"
+                className="w-full bg-white border border-neutral-200 text-neutral-800 rounded-full px-5 py-2.5 pr-10 text-base md:text-sm outline-none focus:ring-2 focus:ring-[#f48fb1]/50 focus:border-[#f48fb1] shadow-sm transition-all cursor-pointer font-jakarta"
               />
               {/* Calendar Icon on the right */}
               <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-500">
