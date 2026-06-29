@@ -53,12 +53,12 @@ export default function Home() {
 
           {/* Header Mobile (Logo Atas) */}
           <div className="w-full flex justify-center mt-2 shrink-0">
-            <img src="/icons/logo-icon-mobile.svg" alt="Logo Exposure Mobile" className="h-16 w-24 object-contain" />
+            <img src="/icons/logo-icon-mobile.svg" alt="Logo Exposure Mobile" className="h-16 w-auto object-contain" />
           </div>
 
           {/* Center Graphic (Spend More To Win Prizes) */}
           <div className="w-full flex-1 flex flex-col items-center justify-center -my-4 z-20">
-            <img src="/icons/hero-mobile.svg" alt="Spend More To Win Prizes" className="w-[90%] max-w-[90%] object-contain scale-[1.15]" />
+            <img src="/icons/hero-mobile.svg" alt="Spend More To Win Prizes" className="w-[85%] max-w-[85%] h-auto aspect-[382/305] object-contain" />
           </div>
 
           {/* Tombol Bawah (Di atas rumput) */}
