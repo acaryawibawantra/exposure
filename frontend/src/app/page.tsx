@@ -58,7 +58,7 @@ export default function Home() {
 
           {/* Center Graphic (Spend More To Win Prizes) */}
           <div className="w-full flex flex-col items-center justify-center -my-4 z-20">
-            <img src="/icons/hero-mobile.svg" alt="Spend More To Win Prizes" className="w-[85%] max-w-[85%] h-auto aspect-[382/305] object-contain" />
+            <img src="/svg/hero-mobile.png" alt="Spend More To Win Prizes" className="w-[85%] max-w-[85%] h-auto aspect-[382/305] object-contain" />
           </div>
 
           {/* Tombol Bawah (Di atas rumput) */}
