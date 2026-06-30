@@ -42,7 +42,6 @@ export default function SubmitPage() {
 
   // Form handling state
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   // Total Accumulation matching Figma design
@@ -121,7 +120,7 @@ export default function SubmitPage() {
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
-      setShowSuccess(true);
+      router.push("/submit/transition");
     }, 1500);
   };
 
@@ -138,7 +137,6 @@ export default function SubmitPage() {
       },
     ]);
     setAgreed(false);
-    setShowSuccess(false);
     setError(null);
   };
 
@@ -467,73 +465,6 @@ export default function SubmitPage() {
           </div>
         </form>
       </div>
-
-      {/* ========================================= */}
-      {/* PREMIUM SUCCESS MODAL                     */}
-      {/* ========================================= */}
-      {showSuccess && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-
-          {/* Modal Container */}
-          <GlassCard className="relative z-10 w-full max-w-md rounded-[2rem] p-8 flex flex-col items-center text-center shadow-2xl border border-white/20 animate-logo-pop">
-            {/* Sparkle/Check Icon */}
-            <div className="w-20 h-20 rounded-full bg-green-500 text-white flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(34,197,94,0.6)] animate-pulse">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={3}
-                stroke="currentColor"
-                className="w-10 h-10"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-              </svg>
-            </div>
-
-            {/* Title */}
-            <h2 className="text-3xl font-black font-freaky text-white tracking-wide uppercase mb-2">
-              SUBMIT SUCCESS!
-            </h2>
-            <p className="text-white/80 text-sm mb-6 font-jakarta">
-              Bukti transaksi Anda berhasil diunggah dan sedang diproses. Mohon tunggu proses validasi untuk memperbarui posisi Anda di Leaderboard.
-            </p>
-
-            {/* Summary Details inside Modal */}
-            <div className="w-full bg-white/10 rounded-2xl p-4 mb-6 border border-white/5 text-left text-xs text-white flex flex-col gap-2 font-jakarta">
-              <div className="flex justify-between border-b border-white/10 pb-1.5">
-                <span className="opacity-70">Username:</span>
-                <span className="font-bold">{username}</span>
-              </div>
-              <div className="flex justify-between border-b border-white/10 pb-1.5">
-                <span className="opacity-70">Jumlah Struk:</span>
-                <span className="font-bold">{receipts.length} Struk</span>
-              </div>
-              <div className="flex justify-between pt-0.5">
-                <span className="opacity-70">Total Transaksi:</span>
-                <span className="font-bold text-[#FFD747] text-sm">{formatCurrency(totalAccumulation)}</span>
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-col gap-3 w-full font-jakarta">
-              <button
-                onClick={() => router.push("/")}
-                className="w-full py-3 rounded-xl bg-white text-black font-bold text-sm tracking-wider hover:bg-neutral-100 transition-colors shadow-md cursor-pointer"
-              >
-                KEMBALI KE LEADERBOARD
-              </button>
-              <button
-                onClick={handleReset}
-                className="w-full py-3 rounded-xl bg-transparent border border-white text-white font-bold text-sm tracking-wider hover:bg-white/10 transition-colors cursor-pointer"
-              >
-                UNGGAH STRUK LAGI
-              </button>
-            </div>
-          </GlassCard>
-        </div>
-      )}
     </SubmitBackground>
   );
 }

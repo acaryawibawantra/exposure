@@ -10,8 +10,6 @@ export default function SubmitBackground({ children }: SubmitBackgroundProps) {
   return (
     <div className="relative w-full flex flex-col bg-linear-to-b from-[#4fa3e3] via-[#b39ddb] via-[#f48fb1] via-[#ffe082] to-[#81c784] min-h-[100dvh] md:h-[100vh] overflow-y-auto md:overflow-hidden overflow-x-hidden">
       {/* 
-        FIXED BACKGROUND LAYER (Z-INDEX: 0)
-        Pinned to viewport so it never scrolls, keeping the landscape static.
       */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden select-none z-0">
         {/* Layer 1: Base Background SVG */}

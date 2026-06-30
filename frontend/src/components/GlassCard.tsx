@@ -12,7 +12,7 @@ export default function GlassCard({ children, className = "", ...props }: GlassC
       className={twMerge(
         "relative overflow-hidden bg-white/20 backdrop-blur-md",
         "border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.1)]",
-        "shadow-[inset_0_2px_4px_rgba(255,255,255,0.4)]", // Inner highlight for glass effect
+        "shadow-[inset_0_2px_4px_rgba(255,255,255,0.4)]",
         className
       )}
       {...props}
