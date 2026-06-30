@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Fredoka, Plus_Jakarta_Sans } from "next/font/google";
+import { Outfit, Fredoka } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -14,15 +14,21 @@ const fredoka = Fredoka({
   weight: ["400", "500", "600", "700"],
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const plusJakartaSans = localFont({
+  src: "../../public/fonts/PlusJakartaSans-VariableFont_wght.ttf",
   variable: "--font-plus-jakarta-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const freakyFreedom = localFont({
   src: "../../public/fonts/Freaky Freedom.ttf",
   variable: "--font-freaky-freedom",
+  display: "swap",
+});
+
+const steromont = localFont({
+  src: "../../public/fonts/SteroMont-lxxMe.ttf",
+  variable: "--font-steromont-face",
   display: "swap",
 });
 
@@ -37,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${outfit.variable} ${fredoka.variable} ${plusJakartaSans.variable} ${freakyFreedom.variable} h-full antialiased`}>
+    <html lang="id" className={`${outfit.variable} ${fredoka.variable} ${plusJakartaSans.variable} ${freakyFreedom.variable} ${steromont.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans text-gray-900 antialiased">
         {children}
       </body>
