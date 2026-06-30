@@ -225,14 +225,14 @@ export default function ReceiptCard({
           </div>
 
           {/* Date Picker */}
-          <div className="flex flex-col gap-1.5">
+          <div className="flex flex-col gap-1.5 min-w-0">
             <label className="text-sm font-bold text-neutral-800 font-jakarta">Tanggal</label>
-            <div className="relative">
+            <div className="relative min-w-0">
               <input
                 type="date"
                 value={data.date}
                 onChange={(e) => onChange(data.id, { date: e.target.value })}
-                className="w-full bg-white border border-neutral-200 text-neutral-800 rounded-full px-3 sm:px-5 py-2.5 pr-7 sm:pr-10 text-base md:text-sm outline-none focus:ring-2 focus:ring-[#f48fb1]/50 focus:border-[#f48fb1] shadow-sm transition-all cursor-pointer font-jakarta [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:inset-0 [&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer"
+                className="w-full max-w-full bg-white border border-neutral-200 text-neutral-800 rounded-full px-3 sm:px-5 py-2.5 pr-7 sm:pr-10 text-base md:text-sm outline-none focus:ring-2 focus:ring-[#f48fb1]/50 focus:border-[#f48fb1] shadow-sm transition-all cursor-pointer font-jakarta [&::-webkit-calendar-picker-indicator]:opacity-0"
               />
               {/* Calendar Icon on the right */}
               <div className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-500">
